@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+body{
+background-color: #7C9182;}
+
+.wallpaper-container {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -100;
+}
+
+.wallpaper{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    background-repeat: repeat-y;
+    filter: opacity(0.2) contrast(2);
+    transition: all 2s ease-out;
+}
+
+.wallpaper-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+
+.wallpaper-container::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(174,245,171);
+    background: radial-gradient(circle, rgba(174,245,171,0.1) 0%, rgba(23,74,43,0.7) 100%);
+}
+
+.title{
+    width: 100%;
+}
+
+.title h1{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.card-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-container .card{
+    width: 250px;
+    height: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: none;
+    border-radius: 10px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 5px 6px 7px -3px #000000;
+    transition: box-shadow 0.1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+}
+
+.card-container .card:hover{
+    box-shadow: 5px 6px 7px -2px #000000;
+}
+
+.card-container .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* .card-container .card::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(174,245,171,0.1) 80%, rgba(23,74,43,0.3) 85%, rgba(23,74,43,0.8) 100%);  
+} */
+
+.card-container .card img:hover{
+    transform: scale(1.1) rotate(1deg);
+}
+
+.card-container .card .name{
+    font-size: 30px;
+    position: absolute;
+    top: 345px;
+    right: 0px;
+    padding: 10px;
+    color: azure;
+    transition: transform 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.card-container .card:hover .name{
+    transform: translateY(-35px);
+}
+
+.card-container .card .nickname{
+    font-size: 24px;
+    font-weight: 300;
+    position: absolute;
+    top: 345px;
+    right: 0px;
+    padding: 10px;
+    color: azure;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    z-index: 2;
+}
+
+.card-container .card:hover .nickname{
+    opacity: 1;
+}
+
+/* Search Container */
+
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-container #query {
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.search-container #submit, .search-container #button-all {
+    width: 75px;
+    height: 30px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container #submit:active, .search-container #button-all:active{
+    box-shadow: 3px 3px 7px -3px #000000;
+}
+
+.search-container #submit:hover, .search-container #button-all:hover, .search-container #query:hover{
+    border: 1px solid black;
+}
+
+.cursor-loading {
+    cursor: progress;
+}
+
+.zero-opacity {
+    opacity: 0;
+}
+
+.full-opacity{
+    opacity: 1;
+}
